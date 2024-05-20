@@ -1,6 +1,11 @@
+<!-- this tag is now a universal time to all websiteT -->
+<!-- but if you want to only use one sectione the put this tag there -->
+
 <?php
 date_default_timezone_set("Asia/Dhaka");
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
