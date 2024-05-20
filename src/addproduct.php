@@ -3,15 +3,17 @@
   if(isset($_REQUEST["submit"])){
     $prodName=$_REQUEST["prodName"];
     $prodPrice=$_REQUEST["prodPrice"];
-
     // image path
-     
     $imageDi="./image/";
 
+
+
     //  image uploading path
-    $ImageName=date("y_m_d").".".pathinfo($_FILES["prodImage"]["name"],PATHINFO_EXTENSION);
+
+ $ImageName=date("Y_m_d_H_i_s").".".pathinfo($_FILES["prodImage"]["name"],PATHINFO_EXTENSION);
 $imageFullPath=$imageDi . $ImageName;
 move_uploaded_file($_FILES["prodImage"]["tmp_name"],$imageFullPath);
+
  }
 
   ?>
