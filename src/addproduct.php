@@ -1,5 +1,11 @@
+<!-- start -->.
+ <!-- but we just use only one page that is why we use here -->
+
+
 <?php
   require "./header.php";
+  require_once "./db_connection.php";
+
   if(isset($_REQUEST["submit"])){
     $prodName=$_REQUEST["prodName"];
     $prodPrice=$_REQUEST["prodPrice"];
@@ -8,15 +14,28 @@
 
 
 
+
     //  image uploading path
 
  $ImageName=date("Y_m_d_H_i_s").".".pathinfo($_FILES["prodImage"]["name"],PATHINFO_EXTENSION);
 $imageFullPath=$imageDi . $ImageName;
 move_uploaded_file($_FILES["prodImage"]["tmp_name"],$imageFullPath);
+$query="INSERT INTO `productinfo`( `name`, `image`,`price`) VALUES ('$prodName','$ImageName','$prodPrice')";
+
+// database connection
+
+mysqli_query($conn,$query);
+
+// after subbmite add product page exit and  go view product page
+
+header("location: ./viewproduct.php");
+exit();
 
  }
 
   ?>
+
+  <!-- end -->
 
 <section id="addProduct">
       <div class="text-center text-2xl bg-slate-200 font-bold py-2">
