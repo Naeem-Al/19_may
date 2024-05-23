@@ -9,7 +9,10 @@
   if(isset($_REQUEST["submit"])){
     $prodName=$_REQUEST["prodName"];
     $prodPrice=$_REQUEST["prodPrice"];
+
+
     // image path
+    
     $imageDi="./image/";
 
 
