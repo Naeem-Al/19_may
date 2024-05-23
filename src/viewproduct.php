@@ -28,7 +28,7 @@
                 ?>
                 <!-- here we start a new php tag but incude here our main table tructure -->
                 <!-- also here we customise our style like image size,position ect -->
-                add php tag in code where i need to show my data base
+                <!-- add php tag in code where i need to show my data base -->
                   <tr>
                       <td class="border text-center px-2 py-2"><?php echo  $counter ;?></td>
                       <td style="display: flex; justify-content:center"    class="border text-center px-2 py-2">
@@ -37,7 +37,7 @@
                       <td class="border px-2 py-2"><?php echo$row["name"];?></td>
                       <td class="border text-center px-2 py-2"><?php echo$row["price"];?></td>
                       <td class="border text-center px-2 py-2">
-                          <a href="">Edit</a>
+                      <a href="./editenew.php?id=<?php echo $row["id"];?>">Edit</a>
                           /
                           <a href="./deleteproduct.php?id=<?php echo $row["id"];?>">Delete</a>
                       </td>
